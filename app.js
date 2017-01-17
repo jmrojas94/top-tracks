@@ -14,7 +14,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = process.env.CLIENT_ID; // Your client id
 var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = 'https://spottoptracks.herokuapp.com/'; // Your redirect uri
+var redirect_uri = 'https://spottoptracks.herokuapp.com/callback/'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -150,6 +150,5 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
-app.listen(process.env.PORT || 8888, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+console.log('Listening on 8888');
+app.listen(8888);
